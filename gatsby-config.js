@@ -80,9 +80,12 @@ module.exports = {
      */
     // `gatsby-plugin-offline`,
     {
-      resolve: `gatsby-plugin-postcss`,
+      resolve: `gatsby-plugin-sass`,
       options: {
-        postCssPlugins: [],
+        postCssPlugins: [
+          require(`postcss-preset-env`)({stage: 1}),
+          require(`postcss-utilities`),
+        ]
       }
     }
   ],
