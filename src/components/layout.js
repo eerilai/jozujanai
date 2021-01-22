@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import {siteTitle} from "../text.js"
+import Navbar from "./navbar.js"
 
 const Layout = ({ isHomePage, children }) => {
   // const {
@@ -25,6 +26,7 @@ const Layout = ({ isHomePage, children }) => {
           <Link to="/">{siteTitle}</Link>
         </h1>
       </header>
+      <Navbar/>
 
       <main>{children}</main>
 
