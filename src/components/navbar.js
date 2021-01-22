@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { Link } from 'gatsby'
+import navbarStyles from "./navbar.module.sass"
 
 const Navbar = () => {
+  // import { useStaticQuery, graphql } from "gatsby"
   // const q = useStaticQuery(
   //   graphql`
   //     query {
@@ -18,46 +20,44 @@ const Navbar = () => {
   //   `
   // )
   return (
-    <nav className="navbar">
-      <div className="container">
-        <div className="navbar-menu is-lowercase">
-          <Link
-            className="navbar-item"
-            to="/" 
-          >
-            Blog
-          </Link>
-          <Link
-            className="navbar-item"
-            to="/fiction" 
-          >
-            Fiction
-          </Link>
-          <Link
-            className="navbar-item"
-            to="/art" 
-          >
-            Art
-          </Link>
-          <Link
-            className="navbar-item"
-            to="/poetry" 
-          >
-            Poetry
-          </Link>
-          <Link
-            className="navbar-item"
-            to="/games" 
-          >
-            Games
-          </Link>
-          <Link
-            className="navbar-item"
-            to="/about" 
-          >
-            About
-          </Link>
-        </div>
+    <nav className={navbarStyles.container}>
+      <div className={navbarStyles.menu}>
+        <Link
+          className={navbarStyles.item}
+          to="/" 
+        >
+          Blog
+        </Link>
+        <Link
+          className={navbarStyles.item}
+          to="/fiction" 
+        >
+          Fiction
+        </Link>
+        <Link
+          className={navbarStyles.item}
+          to="/art" 
+        >
+          Art
+        </Link>
+        <Link
+          className={navbarStyles.item}
+          to="/poetry" 
+        >
+          Poetry
+        </Link>
+        <Link
+          className={navbarStyles.item}
+          to="/games" 
+        >
+          Games
+        </Link>
+        <Link
+          className={navbarStyles.item}
+          to="/about" 
+        >
+          About
+        </Link>
       </div>
     </nav>
   )

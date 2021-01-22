@@ -1,0 +1,32 @@
+@use "../global-variables" as g
+
+$backround-color: black
+$color: g.$background
+$hover-color: black
+$hover-background-color: #FFADFF
+$width: 800px
+$height: 3.25rem
+
+.container
+    @util center
+    top: 100px
+    background-color: $backround-color
+    font-family: g.$header-font
+    font-weight: bold
+    width: $width 
+    height: $height
+    clip-path: g.$baton-shape
+    justify-content: center
+    display: flex
+    
+.menu
+    margin: auto
+
+.item
+    padding: 12px 15px
+    font-weight: var(--fontWeight-black)
+    text-decoration: none
+    color: $color
+    &:hover
+        background-color: $hover-background-color
+        color: $backround-color
