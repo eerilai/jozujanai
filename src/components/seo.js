@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { siteTitle } from "../text.js"
 
 const SEO = ({ description, lang, meta, title }) => {
   const { wp, wpUser } = useStaticQuery(
@@ -30,7 +31,7 @@ const SEO = ({ description, lang, meta, title }) => {
   )
 
   const metaDescription = description || wp.generalSettings?.description
-  const defaultTitle = wp.generalSettings?.title
+  const defaultTitle = siteTitle || wp.generalSettings?.title
 
   return (
     <Helmet
