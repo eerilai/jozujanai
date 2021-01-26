@@ -70,6 +70,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%
+}
+
 html {
   line-height: var(--lineHeight-normal);
   font-size: var(--fontSize-root);
@@ -242,9 +246,7 @@ a:focus {
 /* Custom classes */
 
 .global-wrapper {
-  margin: var(--spacing-0) auto;
-  max-width: var(--maxWidth-wrapper);
-  padding: var(--spacing-10) var(--spacing-5);
+  margin: var(--spacing-0);
 }
 
 .global-wrapper[data-is-root-path="true"] .bio {

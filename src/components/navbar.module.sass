@@ -4,8 +4,6 @@ $backround-color: black
 $color: g.$background
 $hover-color: black
 $hover-background-color: #FFADFF
-$width: 800px
-$height: 3.25rem
 
 .container
     @util center
@@ -13,8 +11,8 @@ $height: 3.25rem
     background-color: $backround-color
     font-family: g.$header-font
     font-weight: bold
-    width: $width 
-    height: $height
+    width: g.$baton-width 
+    height: g.$baton-height
     clip-path: g.$baton-shape
     justify-content: center
     display: flex
@@ -24,7 +22,7 @@ $height: 3.25rem
 
 .item
     padding: 12px 15px
-    font-weight: var(--fontWeight-black)
+    font-weight: g.$fontWeight-black
     text-decoration: none
     color: $color
     &:hover

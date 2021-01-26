@@ -1,9 +1,11 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 import {siteTitle} from "../text.js"
 import Navbar from "./navbar.js"
+import layoutStyles from "./layout.module.sass"
 
 const Layout = ({ isHomePage, children }) => {
+  // import { useStaticQuery, graphql } from "gatsby"
   // const {
   //   wp: {
   //     generalSettings: { title },
@@ -20,23 +22,24 @@ const Layout = ({ isHomePage, children }) => {
   // `)
 
   return (
-    <div className="global-wrapper" data-is-root-path={isHomePage}>
-      <header className="global-header">
-        <h1 className="main-heading">
-          <Link to="/">{siteTitle}</Link>
-        </h1>
-      </header>
-      <Navbar/>
+    <div className={`global-wrapper ${layoutStyles.wrapper}`} data-is-root-path={isHomePage}>
+      <div className={`content-wrapper ${layoutStyles.contentWrapper}`}>
+        <header className={`global-header ${layoutStyles.headerWrapper}`}>
+          <h1 className={`header ${layoutStyles.header}`}>
+            <Link to="/">{siteTitle}</Link>
+          </h1>
+        </header>
 
-      <main>{children}</main>
+        <Navbar/>
 
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
-        {` `}
-        And <a href="https://wordpress.org/">WordPress</a>
-      </footer>
+        <main className={`main ${layoutStyles.main}`}>{children}</main>
+
+        <footer>
+          © {new Date().getFullYear()}, Built by
+          {` `}
+          <a href="https://www.twitter.com/eerilai">eerilai</a>
+        </footer>
+      </div>
     </div>
   )
 }
