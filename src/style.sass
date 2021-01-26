@@ -1,62 +1,5 @@
 /* CSS Custom Properties Definitions
-
-$maxWidth-none:"none"
-$maxWidth-xs:20rem
-$maxWidth-sm:24rem
-$maxWidth-md:28rem
-$maxWidth-lg:32rem
-$maxWidth-xl:36rem
-$maxWidth-2xl:42rem
-$maxWidth-3xl:48rem
-$maxWidth-4xl:56rem
-$maxWidth-full:"100%"
-$maxWidth-wrapper:$maxWidth-2xl
-$spacing-px:"1px"
-$spacing-0:0
-$spacing-1:0.25rem
-$spacing-2:0.5rem
-$spacing-3:0.75rem
-$spacing-4:1rem
-$spacing-5:1.25rem
-$spacing-6:1.5rem
-$spacing-8:2rem
-$spacing-10:2.5rem
-$spacing-12:3rem
-$spacing-16:4rem
-$spacing-20:5rem
-$spacing-24:6rem
-$spacing-32:8rem
-$fontFamily-sans:Montserrat, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
-$fontFamily-serif:"Merriweather", "Georgia", Cambria, "Times New Roman", Times, serif
-$font-body:$fontFamily-serif
-$font-heading:$fontFamily-sans
-$fontWeight-normal:400
-$fontWeight-medium:500
-$fontWeight-semibold:600
-$fontWeight-bold:700
-$fontWeight-extrabold:800
-$fontWeight-black:900
-$fontSize-root:16px
-$lineHeight-none:1
-$lineHeight-tight:1.1
-$lineHeight-normal:1.5
-$lineHeight-relaxed:1.625
-
-/* 1.200 Minor Third Type Scale
-$fontSize-0:0.833rem
-$fontSize-1:1rem
-$fontSize-2:1.2rem
-$fontSize-3:1.44rem
-$fontSize-4:1.728rem
-$fontSize-5:2.074rem
-$fontSize-6:2.488rem
-$fontSize-7:2.986rem
-$color-primary:#005b99
-$color-text:#2e353f
-$color-text-light:#4f5969
-$color-heading:#1a202c
-$color-heading-black:black
-$color-accent:#d1dce5
+@use "./global-variables" as g
 
 /* HTML elements
 
@@ -67,56 +10,56 @@ html, body
   height: 100%
 
 html
-  line-height: $lineHeight-normal
-  font-size: $fontSize-root
+  line-height: g.$lineHeight-normal
+  font-size: g.$fontSize-root
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
 body
-  font-family: $font-body
-  font-size: $fontSize-1
-  color: $color-text
+  font-family: g.$font-body
+  font-size: g.$fontSize-1
+  color: g.$color-text
 
 footer
-  padding: $spacing-6 $spacing-0
+  padding: g.$spacing-6 g.$spacing-0
 
 hr
-  background: $color-accent
+  background: g.$color-accent
   height: 1px
   border: 0
 
 /* Heading
 
 h1, h2, h3, h4, h5, h6
-  font-family: $font-heading
-  margin-top: $spacing-12
-  margin-bottom: $spacing-6
-  line-height: $lineHeight-tight
+  font-family: g.$font-heading
+  margin-top: g.$spacing-12
+  margin-bottom: g.$spacing-6
+  line-height: g.$lineHeight-tight
   letter-spacing: -0.025em
 
 h2, h3, h4, h5, h6
-  font-weight: $fontWeight-bold
-  color: $color-heading
+  font-weight: g.$fontWeight-bold
+  color: g.$color-heading
 
 h1
-  font-weight: $fontWeight-black
-  font-size: $fontSize-6
-  color: $color-heading-black
+  font-weight: g.$fontWeight-black
+  font-size: g.$fontSize-6
+  color: g.$color-heading-black
 
 h2
-  font-size: $fontSize-5
+  font-size: g.$fontSize-5
 
 h3
-  font-size: $fontSize-4
+  font-size: g.$fontSize-4
 
 h4
-  font-size: $fontSize-3
+  font-size: g.$fontSize-3
 
 h5
-  font-size: $fontSize-2
+  font-size: g.$fontSize-2
 
 h6
-  font-size: $fontSize-1
+  font-size: g.$fontSize-1
 
 h1 > a
   color: inherit
@@ -129,65 +72,65 @@ h2 > a, h3 > a, h4 > a, h5 > a, h6 > a
 /* Prose
 
 p
-  line-height: $lineHeight-relaxed
+  line-height: g.$lineHeight-relaxed
   $baseline-multiplier:0.179
   $x-height-multiplier:0.35
-  margin: $spacing-0 $spacing-0 $spacing-8 $spacing-0
-  padding: $spacing-0
+  margin: g.$spacing-0 g.$spacing-0 g.$spacing-8 g.$spacing-0
+  padding: g.$spacing-0
 
 ul, ol
-  margin-left: $spacing-0
-  margin-right: $spacing-0
-  padding: $spacing-0
-  margin-bottom: $spacing-8
+  margin-left: g.$spacing-0
+  margin-right: g.$spacing-0
+  padding: g.$spacing-0
+  margin-bottom: g.$spacing-8
   list-style-position: outside
   list-style-image: none
 
 ul li, ol li
-  padding-left: $spacing-0
-  margin-bottom: calc($spacing-8 / 2)
+  padding-left: g.$spacing-0
+  margin-bottom: calc(#{g.$spacing-8} / 2)
 
 li
   > p
-    margin-bottom: calc($spacing-8 / 2)
+    margin-bottom: calc(#{g.$spacing-8} / 2)
 
   *:last-child
-    margin-bottom: $spacing-0
+    margin-bottom: g.$spacing-0
 
   > ul
-    margin-left: $spacing-8
-    margin-top: calc($spacing-8 / 2)
+    margin-left: g.$spacing-8
+    margin-top: calc(#{g.$spacing-8} / 2)
 
 blockquote
-  color: $color-text-light
-  margin-left: calc(-1 * $spacing-6)
-  margin-right: $spacing-8
-  padding: $spacing-0 $spacing-0 $spacing-0 $spacing-6
-  border-left: $spacing-1 solid $color-primary
-  font-size: $fontSize-2
+  color: g.$color-text-light
+  margin-left: calc(-1 * #{g.$spacing-6})
+  margin-right: g.$spacing-8
+  padding: g.$spacing-0 g.$spacing-0 g.$spacing-0 g.$spacing-6
+  border-left: g.$spacing-1 solid g.$color-primary
+  font-size: g.$fontSize-2
   font-style: italic
-  margin-bottom: $spacing-8
+  margin-bottom: g.$spacing-8
 
   >
     \:last-child
-      margin-bottom: $spacing-0
+      margin-bottom: g.$spacing-0
 
     ul, ol
       list-style-position: inside
 
 table
   width: 100%
-  margin-bottom: $spacing-8
+  margin-bottom: g.$spacing-8
   border-collapse: collapse
   border-spacing: 0.25rem
 
   thead tr th
-    border-bottom: 1px solid $color-accent
+    border-bottom: 1px solid g.$color-accent
 
 /* Link
 
 a
-  color: $color-primary
+  color: g.$color-primary
   word-break: break-word
 
   &:hover, &:focus
@@ -196,74 +139,74 @@ a
 /* Custom classes
 
 .global-wrapper
-  margin: $spacing-0
+  margin: g.$spacing-0
 
   &[data-is-root-path="true"] .bio
-    margin-bottom: $spacing-20
+    margin-bottom: g.$spacing-20
 
 .global-header
-  margin-bottom: $spacing-12
+  margin-bottom: g.$spacing-12
 
 .main-heading
-  font-size: $fontSize-7
+  font-size: g.$fontSize-7
   margin: 0
 
 .post-list-item
-  margin-bottom: $spacing-8
-  margin-top: $spacing-8
+  margin-bottom: g.$spacing-8
+  margin-top: g.$spacing-8
 
   p
-    margin-bottom: $spacing-0
+    margin-bottom: g.$spacing-0
 
   h2
-    font-size: $fontSize-4
-    color: $color-primary
-    margin-bottom: $spacing-2
-    margin-top: $spacing-0
+    font-size: g.$fontSize-4
+    color: g.$color-primary
+    margin-bottom: g.$spacing-2
+    margin-top: g.$spacing-0
 
   header
-    margin-bottom: $spacing-4
+    margin-bottom: g.$spacing-4
 
 .header-link-home
-  font-weight: $fontWeight-bold
-  font-family: $font-heading
+  font-weight: g.$fontWeight-bold
+  font-family: g.$font-heading
   text-decoration: none
-  font-size: $fontSize-2
+  font-size: g.$fontSize-2
 
 .bio
   display: flex
-  margin-bottom: $spacing-16
+  margin-bottom: g.$spacing-16
 
   p
-    margin-bottom: $spacing-0
+    margin-bottom: g.$spacing-0
 
 .bio-avatar
-  margin-right: $spacing-4
-  margin-bottom: $spacing-0
+  margin-right: g.$spacing-4
+  margin-bottom: g.$spacing-0
   max-width: 80px
   height: auto
   border-radius: 100%
 
 .blog-post header
   h1
-    margin: $spacing-0 $spacing-0 $spacing-4 $spacing-0
+    margin: g.$spacing-0 g.$spacing-0 g.$spacing-4 g.$spacing-0
 
   p
-    font-size: $fontSize-2
-    font-family: $font-heading
+    font-size: g.$fontSize-2
+    font-family: g.$font-heading
 
 .blog-post-nav ul
-  margin: $spacing-0
+  margin: g.$spacing-0
 
 .gatsby-highlight
-  margin-bottom: $spacing-8
+  margin-bottom: g.$spacing-8
 
 /* Media queries
 
 @media (max-width: 42rem)
   blockquote
-    padding: $spacing-0 $spacing-0 $spacing-0 $spacing-4
-    margin-left: $spacing-0
+    padding: g.$spacing-0 g.$spacing-0 g.$spacing-0 g.$spacing-4
+    margin-left: g.$spacing-0
 
   ul, ol
     list-style-position: inside
