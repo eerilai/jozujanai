@@ -33,7 +33,7 @@ const Layout = ({ isHomePage, children }) => {
         <Navbar/>
 
         <main className={`main ${layoutStyles.main}`}>{children}</main>
-
+        <div className={`content-bottom ${layoutStyles.bottom}`}></div>
         <footer>
           © {new Date().getFullYear()}, Built by
           {` `}

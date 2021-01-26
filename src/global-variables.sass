@@ -62,9 +62,15 @@ $color-accent:#d1dce5
 
 $header-font: "Merriweather", serif
 $background: #FFCFFF
+$baton-color: black
 $baton-width: $maxWidth-3xl
 $baton-height: 3.25rem
 $baton-point-width: 4%
 $baton-shaft-width: calc(100% - #{$baton-point-width})
 $baton-inset-width: calc(#{$baton-width} - ((#{$baton-width} * .04) * 2))
 $baton-shape: polygon(#{$baton-point-width} 0, $baton-shaft-width 0, 100% 50%, $baton-shaft-width 100%, #{$baton-point-width} 100%, 0% 50%)
+@mixin baton-shape-wrapper 
+    background-color: $baton-color
+    width: $baton-width 
+    height: $baton-height
+    clip-path: $baton-shape
